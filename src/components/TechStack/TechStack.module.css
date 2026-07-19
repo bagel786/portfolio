@@ -1,0 +1,29 @@
+.section {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.badges {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.4em 1.1em;
+  color: var(--neon-yellow);
+  border: 1px solid var(--neon-yellow);
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  transition: all var(--t-fast) ease;
+  cursor: default;
+}
+
+.badge:hover {
+  background: var(--neon-yellow);
+  color: var(--bg-obsidian);
+  box-shadow: var(--glow-yellow);
+}

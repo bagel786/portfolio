@@ -1,0 +1,87 @@
+export interface Project {
+  id: string
+  title: string
+  role: string
+  description: string
+  stack: string[]
+  stat?: string
+  links: { live?: string; github?: string }
+  media: { type: 'image' | 'none'; src?: string; alt?: string }
+  accent: 'yellow' | 'cyan'
+}
+
+// ponytail: media.src points at public/assets — swap a file or a string here, never touch components
+export const projects: Project[] = [
+  {
+    id: 'death-over',
+    title: 'The Death Over',
+    role: 'Lead Developer',
+    description:
+      'Cricket simulation game with a probability engine, AI batsman archetypes, field-reading logic, a bluff mechanic, seeded-RNG daily challenges, and a Wordle-style share feature.',
+    stack: ['Next.js', 'TypeScript', 'Supabase', 'Railway'],
+    stat: '30,000+ plays · 10,000+ players',
+    links: { live: 'https://www.deathover.xyz/', github: 'https://github.com/bagel786/DeathOver' },
+    media: { type: 'image', src: '/assets/deathover.png', alt: 'The Death Over tactical gameplay UI' },
+    accent: 'yellow',
+  },
+  {
+    id: 'astrotour',
+    title: 'AstroTour',
+    role: 'Solo Developer',
+    description:
+      'Educational career-exploration game built solo in Unity for TSA competition — explore careers through interactive space-station gameplay.',
+    stack: ['Unity', 'C#'],
+    stat: '4,000+ plays',
+    links: {},
+    media: { type: 'image', src: '/assets/astrotour.jpeg', alt: 'AstroTour title screen' },
+    accent: 'cyan',
+  },
+  {
+    id: 'neurova',
+    title: 'Neurova Labs',
+    role: 'Founding Engineer',
+    description:
+      'ML/CV models trained on 12,000+ brain recordings, improving classification accuracy 38%. Engineered 4 cloud data pipelines for the research stack.',
+    stack: ['Python', 'ML/CV', 'Cloud'],
+    stat: '12,000+ recordings · +38% accuracy',
+    links: { live: 'https://www.neurovalabs.xyz/' },
+    media: { type: 'image', src: '/assets/neurova.jpg', alt: 'Neurova Labs platform' },
+    accent: 'cyan',
+  },
+  {
+    id: 'mit-bwsi',
+    title: 'MIT BWSI — Serious Games & AI',
+    role: 'Selected Engineer',
+    description:
+      'Engineered an AI-driven serious game modeling human-AI decision-making using reinforcement learning, on a 5-person agile team at MIT Beaver Works Summer Institute.',
+    stack: ['Python', 'RL', 'AI'],
+    stat: '1 of 37 selected',
+    links: {},
+    media: { type: 'none' },
+    accent: 'yellow',
+  },
+  {
+    id: 'launchpad',
+    title: 'Launchpad Consulting',
+    role: 'CTO',
+    description:
+      'Architected dashboards, landing pages, and lead-gen tools for 10+ clients while leading a 10-person dev team.',
+    stack: ['Next.js', 'TypeScript'],
+    stat: '$15K+ revenue · 10-person team',
+    links: { live: 'https://launchpadconsulting.net/' },
+    media: { type: 'image', src: '/assets/launchpad.png', alt: 'Launchpad Consulting logo' },
+    accent: 'yellow',
+  },
+  {
+    id: 'meridian',
+    title: 'Meridian Finance Solutions',
+    role: 'Tech Director',
+    description:
+      'Engineered an iOS app, full-stack platform, and 20+ Python tools for financial literacy — scaled to 5 national chapters reaching 800+ students.',
+    stack: ['iOS', 'Python', 'Full-Stack'],
+    stat: '5 national chapters · 800+ students',
+    links: { live: 'https://meridianfinance.org/' },
+    media: { type: 'image', src: '/assets/meridian.jpg', alt: 'Meridian Finance Solutions platform' },
+    accent: 'cyan',
+  },
+]

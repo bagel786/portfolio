@@ -1,0 +1,47 @@
+.section {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.strip {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--neon-cyan);
+  background: rgba(245, 245, 240, 0.03);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+  transition: border-color var(--t-fast) ease, background var(--t-fast) ease;
+}
+
+.item:hover {
+  border-left-color: var(--neon-yellow);
+  background: rgba(245, 245, 240, 0.06);
+}
+
+.role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--neon-yellow);
+}
+
+.org {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: var(--ink-white);
+}
+
+.detail {
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+}

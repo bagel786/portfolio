@@ -1,0 +1,271 @@
+/* Pokémon-canon pane colors, deliberately outside the site palette */
+.wrapper {
+  --pane-cream: #f8f0e0;
+  --pane-border: #2a2438;
+  --hp-green: #4cc94c;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.splitting {
+  pointer-events: none;
+}
+
+.half {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: var(--bg-obsidian);
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.topHalf {
+  top: 0;
+}
+
+.bottomHalf {
+  bottom: 0;
+}
+
+.splitting .topHalf {
+  transform: translateY(-100%);
+}
+
+.splitting .bottomHalf {
+  transform: translateY(100%);
+}
+
+.pane {
+  position: absolute;
+  width: min(340px, 78vw);
+  padding: 0.7rem 1rem 0.8rem;
+  background: var(--pane-cream);
+  border: 3px solid var(--pane-border);
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.45);
+}
+
+.topPane {
+  top: 16%;
+  left: 6%;
+  animation: slideFromLeft 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.bottomPane {
+  bottom: 7.5rem;
+  right: 6%;
+  animation: slideFromRight 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.sprite {
+  position: absolute;
+  image-rendering: pixelated;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* wild safiullah: sits on the split seam, right side */
+.wildSprite {
+  right: 9%;
+  bottom: 0;
+  height: min(34vh, 300px);
+  animation: slideFromRight 0.55s 0.1s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+/* the visitor: back-view trainer (pre-mirrored PNG faces the wild mon) */
+.trainerSprite {
+  left: 7%;
+  bottom: 5.2rem;
+  height: min(40vh, 360px);
+  animation: slideFromLeft 0.55s 0.1s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.lunge {
+  animation: lunge 0.45s ease;
+}
+
+@keyframes lunge {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  35% {
+    transform: translate(-42px, 14px);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-120vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(120vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 24px;
+}
+
+.pokeball {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--pane-border);
+  white-space: nowrap;
+}
+
+.level {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--pane-border);
+}
+
+.type {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--pane-border);
+  white-space: nowrap;
+}
+
+.typeLocked {
+  color: #007a66;
+  animation: lockFlash 0.35s ease;
+}
+
+@keyframes lockFlash {
+  0% {
+    text-shadow: 0 0 0 transparent;
+  }
+  40% {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 12px var(--neon-cyan);
+  }
+  100% {
+    text-shadow: 0 0 0 transparent;
+  }
+}
+
+.hpRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.hpTag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #f7b32b;
+  background: var(--pane-border);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.hpTrack {
+  flex: 1;
+  height: 8px;
+  background: var(--pane-border);
+  border-radius: 4px;
+  padding: 1px;
+}
+
+.hpFill {
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #7de87d, var(--hp-green));
+  animation: hpFill 0.9s 0.45s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+@keyframes hpFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.textBox {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 1.4rem;
+  min-height: 3.4rem;
+  padding: 0.7rem 1rem;
+  background: var(--bg-indigo);
+  border: 3px solid var(--pane-cream);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  letter-spacing: 0.03em;
+  color: var(--ink-white);
+  animation: slideFromLeft 0.5s 0.15s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.cursor {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.4rem;
+  font-size: 0.7rem;
+  color: var(--pane-cream);
+  animation: bob 0.8s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+.skip {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-dim);
+  background: transparent;
+  border: 1px solid var(--ink-dim);
+  cursor: pointer;
+  transition: color var(--t-fast), border-color var(--t-fast);
+}
+
+.skip:hover,
+.skip:focus-visible {
+  color: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+}

@@ -1,0 +1,49 @@
+:global(body.neon-cursor-active),
+:global(body.neon-cursor-active) a,
+:global(body.neon-cursor-active) button {
+  cursor: none;
+}
+
+.dot,
+.ring,
+.trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2000;
+  will-change: transform;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--neon-yellow);
+}
+
+.ring {
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border-radius: 50%;
+  border: 1.5px solid var(--neon-cyan);
+  transition: width var(--t-fast) steps(2, end), height var(--t-fast) steps(2, end),
+    margin var(--t-fast) steps(2, end), border-color var(--t-fast) steps(1);
+}
+
+.ring.hot {
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+  border-color: var(--neon-yellow);
+}
+
+.trail {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--neon-cyan);
+}

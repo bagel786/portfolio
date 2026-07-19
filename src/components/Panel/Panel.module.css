@@ -1,0 +1,101 @@
+/* Angled manga panel, three layers:
+   .panel  — unclipped wrapper carrying the drop-shadow glow (clip-path would clip a
+             filter applied on the same element, so the glow lives out here)
+   .frame  — clipped neon background; its 2px padding reads as the panel border
+   .inner  — clipped obsidian content surface (undistorted children, unlike skew()) */
+
+.panel {
+  transition: transform var(--t-fast) steps(2, end);
+  height: 100%;
+}
+
+.panel:hover {
+  transform: scale(1.015);
+}
+
+.frame {
+  clip-path: var(--clip);
+  padding: 2px;
+  height: 100%;
+}
+
+.inner {
+  clip-path: var(--clip);
+  background: var(--bg-indigo);
+  height: 100%;
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* manga print texture: drifting halftone dot overlay + periodic chromatic flicker.
+   ponytail: pure CSS instead of the planned glitch-loop.mp4 — zero bytes, zero decode */
+.inner::after {
+  content: '';
+  position: absolute;
+  inset: -100% 0 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(245, 245, 240, 0.07) 1px, transparent 1px);
+  background-size: 7px 7px;
+  animation:
+    scan 30s linear infinite,
+    glitchFlicker 7s steps(1) infinite;
+}
+
+@keyframes scan {
+  to {
+    transform: translateY(50%);
+  }
+}
+
+@keyframes glitchFlicker {
+  0%, 96% {
+    opacity: 1;
+    filter: none;
+  }
+  96.5% {
+    opacity: 0.7;
+    filter: drop-shadow(2px 0 rgba(157, 78, 221, 0.8)) drop-shadow(-2px 0 rgba(0, 245, 212, 0.8));
+  }
+  97.5% {
+    opacity: 1;
+    filter: none;
+  }
+  98% {
+    opacity: 0.6;
+    filter: drop-shadow(-3px 0 rgba(0, 245, 212, 0.8));
+  }
+  98.5% {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+/* corner-cut variants */
+.cut-tl {
+  --clip: polygon(var(--panel-cut) 0, 100% 0, 100% 100%, 0 100%, 0 var(--panel-cut));
+}
+.cut-tr {
+  --clip: polygon(0 0, calc(100% - var(--panel-cut)) 0, 100% var(--panel-cut), 100% 100%, 0 100%);
+}
+.cut-br {
+  --clip: polygon(0 0, 100% 0, 100% calc(100% - var(--panel-cut)), calc(100% - var(--panel-cut)) 100%, 0 100%);
+}
+.cut-bl {
+  --clip: polygon(0 0, 100% 0, 100% 100%, var(--panel-cut) 100%, 0 calc(100% - var(--panel-cut)));
+}
+
+/* accent = border color on the frame */
+.yellow .frame {
+  background: var(--neon-yellow);
+}
+.cyan .frame {
+  background: var(--neon-cyan);
+}
+
+/* crisp accent swap on hover — no blur, the border color just flips */
+.yellow:hover .frame {
+  background: var(--neon-cyan);
+}
+.cyan:hover .frame {
+  background: var(--neon-yellow);
+}

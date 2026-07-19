@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.3" fill="#f5f5f0" opacity="0.10"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="#09070f"/>
+
+  <!-- flat violet moon in the gap between text column and avatar -->
+  <circle cx="900" cy="185" r="120" fill="#9d4edd"/>
+  <circle cx="900" cy="185" r="120" fill="none" stroke="#f5f5f0" stroke-width="2" opacity="0.25"/>
+  <!-- flat crater shapes -->
+  <circle cx="862" cy="150" r="18" fill="#8a3fd0"/>
+  <circle cx="948" cy="216" r="26" fill="#8a3fd0"/>
+  <circle cx="900" cy="252" r="12" fill="#8a3fd0"/>
+
+  <!-- stars, twinkling mint + still white -->
+  <g fill="#00f5d4">
+    <circle cx="300" cy="140" r="2.5"><animate attributeName="opacity" values="1;0.2;1" dur="3.4s" repeatCount="indefinite"/></circle>
+    <circle cx="620" cy="90" r="2"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="1120" cy="120" r="1.8"><animate attributeName="opacity" values="1;0.25;1" dur="4.1s" repeatCount="indefinite"/></circle>
+    <circle cx="1420" cy="100" r="2.4"><animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="1560" cy="340" r="1.6"><animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/></circle>
+    <circle cx="480" cy="260" r="1.5"><animate attributeName="opacity" values="0.5;1;0.5" dur="3.8s" repeatCount="indefinite"/></circle>
+    <circle cx="1040" cy="60" r="1.6"><animate attributeName="opacity" values="1;0.35;1" dur="2.9s" repeatCount="indefinite"/></circle>
+    <circle cx="180" cy="480" r="1.4"><animate attributeName="opacity" values="0.4;1;0.4" dur="3.3s" repeatCount="indefinite"/></circle>
+    <circle cx="1250" cy="300" r="1.5"><animate attributeName="opacity" values="1;0.3;1" dur="2.7s" repeatCount="indefinite"/></circle>
+  </g>
+  <g fill="#f5f5f0" opacity="0.5">
+    <circle cx="200" cy="330" r="1.2"/><circle cx="750" cy="330" r="1.2"/><circle cx="1300" cy="60" r="1.2"/>
+    <circle cx="400" cy="60" r="1.2"/><circle cx="1000" cy="400" r="1.2"/><circle cx="1500" cy="200" r="1.2"/>
+    <circle cx="560" cy="180" r="1"/><circle cx="1180" cy="220" r="1"/><circle cx="90" cy="150" r="1.2"/>
+    <circle cx="1360" cy="420" r="1"/><circle cx="680" cy="420" r="1"/>
+  </g>
+
+  <!-- halftone patches -->
+  <polygon points="1250,400 1600,360 1600,540 1300,580" fill="url(#dots)"/>
+  <polygon points="0,120 300,90 320,260 0,300" fill="url(#dots)"/>
+
+  <!-- distant pole, center-left behind content (very dark, depth layer) -->
+  <g fill="#100c1e">
+    <rect x="700" y="420" width="8" height="480"/>
+    <rect x="655" y="448" width="98" height="6"/>
+  </g>
+
+  <!-- main utility pole, far right edge -->
+  <g stroke="#1a1430" fill="#1a1430">
+    <rect x="1500" y="140" width="18" height="760"/>
+    <rect x="1390" y="195" width="238" height="11"/>
+    <rect x="1420" y="260" width="178" height="9"/>
+    <rect x="1444" y="320" width="130" height="7"/>
+    <!-- insulators -->
+    <rect x="1402" y="182" width="11" height="13"/>
+    <rect x="1598" y="182" width="11" height="13"/>
+    <rect x="1432" y="247" width="9" height="13"/>
+    <rect x="1582" y="247" width="9" height="13"/>
+    <!-- crossarm braces -->
+    <path d="M1509 208 L1448 262 M1509 208 L1570 262" stroke-width="7" fill="none"/>
+    <!-- transformer drum -->
+    <rect x="1478" y="335" width="26" height="42"/>
+    <!-- footholds -->
+    <rect x="1494" y="480" width="30" height="4"/>
+    <rect x="1494" y="540" width="30" height="4"/>
+    <rect x="1494" y="600" width="30" height="4"/>
+  </g>
+
+  <!-- second pole, far left -->
+  <g stroke="#161028" fill="#161028">
+    <rect x="215" y="310" width="12" height="590"/>
+    <rect x="140" y="350" width="162" height="9"/>
+    <rect x="165" y="398" width="112" height="7"/>
+    <rect x="148" y="338" width="9" height="12"/>
+    <rect x="286" y="338" width="9" height="12"/>
+    <path d="M221 362 L180 400 M221 362 L262 400" stroke-width="5" fill="none"/>
+  </g>
+
+  <!-- power lines sagging across the sky -->
+  <g fill="none" stroke="#1a1430" stroke-width="3">
+    <path d="M-20 280 C 400 400, 900 360, 1405 190"/>
+    <path d="M-20 330 C 420 450, 940 410, 1405 202"/>
+    <path d="M227 350 C 620 460, 1050 420, 1435 258"/>
+    <path d="M227 398 C 640 500, 1080 460, 1452 322"/>
+    <path d="M708 448 C 1000 520, 1300 470, 1500 380"/>
+  </g>
+  <!-- two lines catch the moonlight -->
+  <path d="M-20 280 C 400 400, 900 360, 1405 190" fill="none" stroke="#9d4edd" stroke-width="1.2" opacity="0.65"/>
+  <path d="M227 350 C 620 460, 1050 420, 1435 258" fill="none" stroke="#9d4edd" stroke-width="1" opacity="0.35"/>
+
+  <!-- birds perched on the top wire (flat silhouettes) -->
+  <g fill="#1a1430">
+    <path d="M560 372 q6 -14 12 0 l-4 10 h-4 Z"/>
+    <path d="M596 378 q6 -14 12 0 l-4 10 h-4 Z"/>
+    <path d="M636 381 q6 -14 12 0 l-4 10 h-4 Z"/>
+    <path d="M1060 350 q6 -14 12 0 l-4 10 h-4 Z"/>
+  </g>
+
+  <!-- rooftop skyline -->
+  <g fill="#120e24">
+    <rect x="0" y="800" width="1600" height="100"/>
+    <rect x="40" y="736" width="230" height="72"/>
+    <rect x="160" y="694" width="95" height="52"/>
+    <rect x="420" y="756" width="310" height="52"/>
+    <rect x="560" y="712" width="42" height="52"/>
+    <rect x="860" y="748" width="270" height="60"/>
+    <rect x="1310" y="726" width="290" height="82"/>
+    <rect x="1400" y="676" width="64" height="60"/>
+  </g>
+  <!-- rooftop details -->
+  <g fill="#120e24">
+    <!-- water tower on stilts -->
+    <rect x="928" y="668" width="70" height="52"/>
+    <path d="M924 668 h78 l-8 -14 h-62 Z"/>
+    <rect x="936" y="720" width="6" height="30"/>
+    <rect x="984" y="720" width="6" height="30"/>
+    <!-- TV antennas -->
+    <path d="M110 736 v-52 M92 700 h36 M98 686 h24" stroke="#120e24" stroke-width="4" fill="none"/>
+    <path d="M1354 726 v-44 M1340 696 h28" stroke="#120e24" stroke-width="4" fill="none"/>
+    <!-- AC units -->
+    <rect x="470" y="740" width="26" height="16"/>
+    <rect x="620" y="742" width="22" height="14"/>
+    <!-- railing on one roof -->
+    <path d="M868 748 h120 M876 748 v-12 M900 748 v-12 M924 748 v-12 M948 748 v-12 M972 748 v-12" stroke="#120e24" stroke-width="3" fill="none"/>
+  </g>
+  <!-- lit windows -->
+  <rect x="1424" y="696" width="12" height="16" fill="#00f5d4" opacity="0.85">
+    <animate attributeName="opacity" values="0.85;0.85;0.2;0.85" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="86" y="756" width="10" height="14" fill="#9d4edd" opacity="0.7"/>
+  <rect x="500" y="774" width="10" height="12" fill="#00f5d4" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.15;0.5" dur="9s" repeatCount="indefinite"/>
+  </rect>
+  <!-- red aircraft-warning beacon on the tall roof -->
+  <circle cx="1432" cy="670" r="3.5" fill="#9d4edd">
+    <animate attributeName="opacity" values="1;0.15;1" dur="2.4s" repeatCount="indefinite"/>
+  </circle>
+</svg>

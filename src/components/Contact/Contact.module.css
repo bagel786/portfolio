@@ -1,0 +1,36 @@
+.section {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 4rem 0 6rem;
+}
+
+.links {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.8em 2em;
+  color: var(--neon-cyan);
+  border: 2px solid var(--neon-cyan);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+  transition: all var(--t-fast) ease;
+}
+
+.link:hover {
+  background: var(--neon-cyan);
+  color: var(--bg-obsidian);
+  box-shadow: var(--glow-cyan);
+  transform: translate(-2px, -2px);
+}
+
+.footer {
+  margin-top: 3rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-dim);
+}

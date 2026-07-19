@@ -1,0 +1,24 @@
+.section {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+}
+
+/* asymmetric offsets so the grid reads like a manga page, not a spreadsheet */
+@media (min-width: 700px) {
+  .grid > :nth-child(2) {
+    transform: translateY(1.5rem) rotate(calc(var(--panel-skew) * -0.4));
+  }
+  .grid > :nth-child(3) {
+    transform: rotate(calc(var(--panel-skew) * 0.4));
+  }
+  .grid > :nth-child(5) {
+    transform: translateY(1rem) rotate(calc(var(--panel-skew) * -0.3));
+  }
+}
