@@ -31,8 +31,8 @@ export const projects: Project[] = [
     description:
       'Educational career-exploration game built solo in Unity for TSA competition — explore careers through interactive space-station gameplay.',
     stack: ['Unity', 'C#'],
-    stat: '4,000+ plays',
-    links: {},
+    stat: '3,500+ plays',
+    links: { live: 'https://play.unity.com/en/games/4840d816-e430-4887-87ae-8159a44fba21/astrotour', github: 'https://github.com/bagel786/AstroTour' },
     media: { type: 'image', src: '/assets/astrotour.jpeg', alt: 'AstroTour title screen' },
     accent: 'cyan',
   },
