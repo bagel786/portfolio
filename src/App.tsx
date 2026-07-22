@@ -1,9 +1,10 @@
-import { useState, useCallback, useEffect, lazy, Suspense } from 'react'
+import { useEffect } from 'react'
 import { useReveal } from './hooks/useReveal'
 import Hero from './components/Hero/Hero'
 import Ticker from './components/Ticker/Ticker'
 import ProjectGrid from './components/ProjectGrid/ProjectGrid'
 import LeadershipStrip from './components/LeadershipStrip/LeadershipStrip'
+import Awards from './components/Awards/Awards'
 import CricketPanel from './components/CricketPanel/CricketPanel'
 import PokemonBinder from './components/PokemonBinder/PokemonBinder'
 import Photography from './components/Photography/Photography'
@@ -12,20 +13,8 @@ import TechStack from './components/TechStack/TechStack'
 import Contact from './components/Contact/Contact'
 import NeonCursor from './components/NeonCursor/NeonCursor'
 
-const BattleIntro = lazy(() => import('./components/BattleIntro/BattleIntro'))
-
-const introHold = {
-  position: 'fixed',
-  inset: 0,
-  zIndex: 999,
-  background: 'var(--bg-obsidian)',
-} as const
-
-const alreadyBooted = () => sessionStorage.getItem('booted') === '1'
-
 export default function App() {
-  const [booted, setBooted] = useState(alreadyBooted)
-  useReveal(booted)
+  useReveal(true)
 
   // low-velocity scroll drift: --scroll feeds parallax transforms in CSS
   useEffect(() => {
@@ -40,23 +29,14 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const finishBoot = useCallback(() => {
-    sessionStorage.setItem('booted', '1')
-    setBooted(true)
-  }, [])
-
   return (
     <>
-      {!booted && (
-        <Suspense fallback={<div style={introHold} />}>
-          <BattleIntro onComplete={finishBoot} />
-        </Suspense>
-      )}
       <NeonCursor />
       <Hero />
       <Ticker />
       <ProjectGrid />
       <LeadershipStrip />
+      <Awards />
       <CricketPanel />
       <PokemonBinder />
       <Photography />
