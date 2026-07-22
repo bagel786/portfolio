@@ -23,9 +23,9 @@ export default function Hero() {
             Safiullah <span className={styles.glitchName}>Baig</span>
           </h1>
           <p className={styles.tagline}>
-            17-year-old from Leander, Texas. I make <strong>games</strong> and{' '}
-            <strong>tools</strong> that simulate weird systems — and I spend way too
-            much time on anime, cricket, and the Pokémon Showdown ladder.
+            Hi guys, I'm Saf, a 17 year old from Leander, Texas. I build cool
+            stuff. I also spend too much time playing Pokémon showdown (rated
+            1500+) and reading manga.
           </p>
           <div className={styles.ctas}>
             <a href="#projects" className={styles.ctaPrimary}>
