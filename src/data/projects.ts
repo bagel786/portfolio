@@ -68,7 +68,7 @@ export const projects: Project[] = [
       'Architected dashboards, landing pages, and lead-gen tools for 10+ clients while leading a 10-person dev team.',
     stack: ['Next.js', 'TypeScript'],
     stat: '$15K+ revenue · 10-person team',
-    links: { live: 'https://launchpadconsulting.net/' },
+    links: { live: 'http://launchpadconsulting.xyz/' },
     media: { type: 'image', src: '/assets/launchpad.png', alt: 'Launchpad Consulting logo' },
     accent: 'yellow',
   },
