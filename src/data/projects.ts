@@ -5,7 +5,7 @@ export interface Project {
   description: string
   stack: string[]
   stat?: string
-  links: { live?: string; github?: string }
+  links: { live?: string; github?: string; slides?: string }
   media: { type: 'image' | 'none'; src?: string; alt?: string }
   accent: 'yellow' | 'cyan'
 }
@@ -50,13 +50,16 @@ export const projects: Project[] = [
   },
   {
     id: 'mit-bwsi',
-    title: 'MIT BWSI — Serious Games & AI',
-    role: 'Selected Engineer',
+    title: 'The Lost Souls of Jiangshi Island',
+    role: 'Core Unity Engineer',
     description:
-      'Engineered an AI-driven serious game modeling human-AI decision-making using reinforcement learning, on a 5-person agile team at MIT Beaver Works Summer Institute.',
-    stack: ['Python', 'RL', 'AI'],
+      'A serious game about trust and time built at MIT\'s Beaver Works Summer Institute (1 of 37 selected nationally). Does time pressure make people rely on AI even when it\'s wrong? On a 5-person agile team mentored by MIT Lincoln Laboratory researchers, we built a tower-defense game in Unity/C# where a Python-driven "Oracle" AI delivers deliberately unreliable intel. I coded the core Unity systems and the real-time pipeline connecting the Oracle to the game. Across 10 waves of escalating time pressure, reliance on the AI climbed steadily — even right after players watched it get it wrong. Presented at BWSI\'s closing symposium.',
+    stack: ['Unity', 'C#', 'Python'],
     stat: '1 of 37 selected',
-    links: {},
+    links: {
+      live: 'https://safm1rza.itch.io/lost-souls-of-jiangshi-island',
+      slides: 'https://docs.google.com/presentation/d/1ccV_-1hlxPX0dNLlgJruykgX_AaMNjmiQW_gWFeG-3M/edit?slide=id.g3f5de2169ed_0_184#slide=id.g3f5de2169ed_0_184',
+    },
     media: { type: 'none' },
     accent: 'yellow',
   },

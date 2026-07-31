@@ -37,7 +37,7 @@ export default function ProjectPanel({ project, index }: { project: Project; ind
             </li>
           ))}
         </ul>
-        {(project.links.live || project.links.github) && (
+        {(project.links.live || project.links.github || project.links.slides) && (
           <div className={styles.links}>
             {project.links.live && (
               <a href={project.links.live} target="_blank" rel="noreferrer">
@@ -47,6 +47,11 @@ export default function ProjectPanel({ project, index }: { project: Project; ind
             {project.links.github && (
               <a href={project.links.github} target="_blank" rel="noreferrer">
                 GitHub ↗
+              </a>
+            )}
+            {project.links.slides && (
+              <a href={project.links.slides} target="_blank" rel="noreferrer">
+                Slides ↗
               </a>
             )}
           </div>
