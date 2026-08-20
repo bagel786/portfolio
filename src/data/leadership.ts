@@ -27,6 +27,6 @@ export const leadership: LeadershipItem[] = [
     org: 'FBLA',
     role: 'Vice President',
     detail:
-      'Mentored 30+ students on CS competition prep in Computer Game & Simulation Programming; 95% advanced to state.',
+      'Mentored 15+ students on CS competition prep in Computer Game & Simulation Programming; 95% advanced to state.',
   },
 ]
