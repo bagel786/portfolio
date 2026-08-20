@@ -65,13 +65,13 @@ export const projects: Project[] = [
   },
   {
     id: 'launchpad',
-    title: 'Launchpad Consulting',
+    title: 'LaunchPad Consulting',
     role: 'CTO',
     description:
       'Architected dashboards, landing pages, and lead-gen tools for 10+ clients while leading a 10-person dev team.',
     stack: ['Next.js', 'TypeScript'],
     stat: '$15K+ revenue · 10-person team',
-    links: { live: 'http://launchpadconsulting.xyz/' },
+    links: { live: 'https://launchpadconsulting.xyz/' },
     media: { type: 'image', src: '/assets/launchpad.png', alt: 'Launchpad Consulting logo' },
     accent: 'yellow',
   },

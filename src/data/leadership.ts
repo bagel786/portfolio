@@ -2,6 +2,7 @@ export interface LeadershipItem {
   org: string
   role: string
   detail: string
+  href?: string
 }
 
 export const leadership: LeadershipItem[] = [
@@ -14,6 +15,7 @@ export const leadership: LeadershipItem[] = [
   {
     org: 'USAHSC',
     role: 'President & Coordinating Officer',
+    href: 'https://usahsc-production.up.railway.app/about',
     detail:
       'Built the league website for the TSCB-affiliated HS cricket league; expanded 6 → 10 teams, coordinating 200+ athletes through a full state championship.',
   },

@@ -41,12 +41,12 @@ export default function ProjectPanel({ project, index }: { project: Project; ind
           <div className={styles.links}>
             {project.links.live && (
               <a href={project.links.live} target="_blank" rel="noreferrer">
-                Play / Visit ↗
+                Visit {project.title} ↗
               </a>
             )}
             {project.links.github && (
               <a href={project.links.github} target="_blank" rel="noreferrer">
-                GitHub ↗
+                {project.title} on GitHub ↗
               </a>
             )}
             {project.links.slides && (

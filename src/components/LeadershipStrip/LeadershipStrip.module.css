@@ -41,6 +41,17 @@
   color: var(--ink-white);
 }
 
+.orgLink {
+  width: fit-content;
+  text-decoration-color: var(--neon-cyan);
+  text-underline-offset: 0.22em;
+}
+
+.orgLink:hover,
+.orgLink:focus-visible {
+  color: var(--neon-cyan);
+}
+
 .detail {
   font-size: 0.85rem;
   color: var(--ink-dim);

@@ -14,7 +14,13 @@ export default function LeadershipStrip() {
             style={{ '--reveal-delay': `${i * 100}ms` } as React.CSSProperties}
           >
             <span className={styles.role}>{item.role}</span>
-            <span className={styles.org}>{item.org}</span>
+            {item.href ? (
+              <a className={`${styles.org} ${styles.orgLink}`} href={item.href} target="_blank" rel="noreferrer">
+                {item.org} ↗
+              </a>
+            ) : (
+              <span className={styles.org}>{item.org}</span>
+            )}
             <span className={styles.detail}>{item.detail}</span>
           </li>
         ))}

@@ -4,12 +4,88 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Safiullah Baig — systems thinker building games and simulations. CS + game development portfolio." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://safiullahbaig.com/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#09070f" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Safiullah Baig — Portfolio" />
+    <meta property="og:title" content="Safiullah Baig — Game Development &amp; AI Portfolio" />
+    <meta property="og:description" content="Projects and leadership by Safiullah Baig, including The Death Over, LaunchPad Consulting, and USAHSC." />
+    <meta property="og:url" content="https://safiullahbaig.com/" />
+    <meta property="og:image" content="https://safiullahbaig.com/assets/avatar.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Safiullah Baig — Game Development &amp; AI Portfolio" />
+    <meta name="twitter:description" content="Projects and leadership by Safiullah Baig, including The Death Over, LaunchPad Consulting, and USAHSC." />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://safiullahbaig.com/#person",
+            "name": "Safiullah Baig",
+            "url": "https://safiullahbaig.com/",
+            "image": "https://safiullahbaig.com/assets/avatar.jpg",
+            "sameAs": [
+              "https://github.com/bagel786",
+              "https://www.linkedin.com/in/safiullah-baig-5a7689364/"
+            ],
+            "knowsAbout": ["Game development", "Artificial intelligence", "Simulation", "Software engineering"],
+            "memberOf": [
+              {"@id": "https://launchpadconsulting.xyz/#organization"},
+              {"@id": "https://usahsc-production.up.railway.app/#organization"}
+            ]
+          },
+          {
+            "@type": ["VideoGame", "SoftwareApplication"],
+            "@id": "https://www.deathover.xyz/#game",
+            "name": "The Death Over",
+            "url": "https://www.deathover.xyz/",
+            "applicationCategory": "GameApplication",
+            "gamePlatform": "Web browser",
+            "creator": {"@id": "https://safiullahbaig.com/#person"}
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://launchpadconsulting.xyz/#organization",
+            "name": "LaunchPad Consulting",
+            "url": "https://launchpadconsulting.xyz/"
+          },
+          {
+            "@type": "SportsOrganization",
+            "@id": "https://usahsc-production.up.railway.app/#organization",
+            "name": "USA High School Cricket League",
+            "alternateName": "USAHSC",
+            "url": "https://usahsc-production.up.railway.app/"
+          }
+        ]
+      }
+    </script>
     <title>Safiullah Baig — Portfolio</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main class="seo-fallback">
+        <h1>Safiullah Baig</h1>
+        <p>Game developer and software engineer building strategy games, simulations, and AI systems.</p>
+        <section aria-labelledby="featured-work">
+          <h2 id="featured-work">Featured work and leadership</h2>
+          <article>
+            <h3><a href="https://www.deathover.xyz/">The Death Over cricket strategy game</a></h3>
+            <p>Created and developed by Safiullah Baig. A browser-based cricket simulation built around field placement, delivery selection, AI batter behavior, and bluffing.</p>
+          </article>
+          <article>
+            <h3><a href="https://launchpadconsulting.xyz/team/">LaunchPad Consulting team</a></h3>
+            <p>Safiullah Baig serves as Chief Technology Officer and leads technical work across websites, software tools, and dashboards.</p>
+          </article>
+          <article>
+            <h3><a href="https://usahsc-production.up.railway.app/about">USA High School Cricket League leadership</a></h3>
+            <p>Safiullah Baig serves as President and Coordinating Officer of USAHSC.</p>
+          </article>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
