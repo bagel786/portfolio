@@ -5,8 +5,8 @@ export interface Project {
   description: string
   stack: string[]
   stat?: string
-  links: { live?: string; github?: string; slides?: string }
-  media: { type: 'image' | 'none'; src?: string; alt?: string }
+  links: { live?: string; github?: string; slides?: string; paper?: string }
+  media: { type: 'image' | 'none'; src?: string; alt?: string; ratio?: string }
   accent: 'yellow' | 'cyan'
 }
 
@@ -25,16 +25,43 @@ export const projects: Project[] = [
     accent: 'yellow',
   },
   {
-    id: 'astrotour',
-    title: 'AstroTour',
-    role: 'Solo Developer',
+    id: 'beat-the-countdown',
+    title: 'Beat the Countdown',
+    role: 'Programmer',
     description:
-      'Educational career-exploration game built solo in Unity for TSA competition — explore careers through interactive space-station gameplay.',
-    stack: ['Unity', 'C#'],
-    stat: '3,500+ plays',
-    links: { live: 'https://play.unity.com/en/games/4840d816-e430-4887-87ae-8159a44fba21/astrotour', github: 'https://github.com/bagel786/AstroTour' },
-    media: { type: 'image', src: '/assets/astrotour.jpeg', alt: 'AstroTour title screen' },
+      'GMTK Game Jam 2026 action platformer built in four days: the world ends in 30 seconds, enemies steal your time, and time is money — steal it back from enemies and spend it on shop upgrades. Programmed the game\'s core gameplay systems.',
+    stack: ['Godot', '2D', 'Pixel Art'],
+    stat: 'Top 10% enjoyment · 10.5k+ GMTK entries',
+    links: { live: 'https://leandergamedev.itch.io/beat-the-countdown' },
+    media: { type: 'image', src: '/assets/beat-the-countdown.png', alt: 'Beat the Countdown cover art', ratio: '315 / 250' },
+    accent: 'yellow',
+  },
+  {
+    id: 'one-last-jump',
+    title: 'One Last Jump',
+    role: 'Contributor',
+    description:
+      'GMTK Game Jam 2026 puzzle-platformer: walking is free, but every jump, dash, crate push, and grapple ticks your move counter toward zero — reach the real door before your options run out. All assets hand-drawn.',
+    stack: ['HTML5', '2D', 'Hand-Drawn'],
+    stat: 'Top 15% · 10.5k+ GMTK entries',
+    links: { live: 'https://hot-comet.itch.io/one-last-jump' },
+    media: { type: 'image', src: '/assets/one-last-jump.png', alt: 'One Last Jump cover art', ratio: '315 / 250' },
     accent: 'cyan',
+  },
+  {
+    id: 'marlrefine',
+    title: 'MARLRefine',
+    role: 'Sole Author',
+    description:
+      'Independent research on conformance testing for multi-agent RL environment adapters: aligns a separately loaded native execution with adapter-call blocks and checks phase-scoped semantic obligations across reward channels, decision clocks, and agent scheduling. The case study ran 8 fixed policies over 105 OpenSpiel game types (840 traces) and adjudicated 2,737 findings into three implementation-level roots.',
+    stack: ['Python', 'OpenSpiel', 'Mutation Testing'],
+    stat: '105 game types · 840 traces',
+    links: {
+      paper: '/assets/marlrefine-paper.pdf',
+      github: 'https://github.com/bagel786/marlrefine-artifact',
+    },
+    media: { type: 'none' },
+    accent: 'yellow',
   },
   {
     id: 'neurova',
@@ -62,29 +89,5 @@ export const projects: Project[] = [
     },
     media: { type: 'none' },
     accent: 'yellow',
-  },
-  {
-    id: 'launchpad',
-    title: 'LaunchPad Consulting',
-    role: 'CTO',
-    description:
-      'Architected dashboards, landing pages, and lead-gen tools for 5 clients while leading a 10-person dev team.',
-    stack: ['Next.js', 'TypeScript'],
-    stat: '$5K+ revenue · 10-person team',
-    links: { live: 'https://launchpadconsulting.xyz/' },
-    media: { type: 'image', src: '/assets/launchpad.png', alt: 'Launchpad Consulting logo' },
-    accent: 'yellow',
-  },
-  {
-    id: 'meridian',
-    title: 'Meridian Finance Solutions',
-    role: 'Tech Director',
-    description:
-      'Engineered an iOS app, full-stack platform, and 20+ Python tools for financial literacy — scaled to 5 national chapters reaching 800+ students.',
-    stack: ['iOS', 'Python', 'Full-Stack'],
-    stat: '5 national chapters · 800+ students',
-    links: { live: 'https://meridianfinance.org/' },
-    media: { type: 'image', src: '/assets/meridian.jpg', alt: 'Meridian Finance Solutions platform' },
-    accent: 'cyan',
   },
 ]

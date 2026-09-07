@@ -23,6 +23,7 @@ export default function ProjectPanel({ project, index }: { project: Project; ind
               alt={project.media.alt ?? project.title}
               loading="lazy"
               className={styles.media}
+              style={project.media.ratio ? { aspectRatio: project.media.ratio } : undefined}
             />
           </div>
         )}
@@ -37,11 +38,16 @@ export default function ProjectPanel({ project, index }: { project: Project; ind
             </li>
           ))}
         </ul>
-        {(project.links.live || project.links.github || project.links.slides) && (
+        {(project.links.live || project.links.github || project.links.slides || project.links.paper) && (
           <div className={styles.links}>
             {project.links.live && (
               <a href={project.links.live} target="_blank" rel="noreferrer">
                 Visit {project.title} ↗
+              </a>
+            )}
+            {project.links.paper && (
+              <a href={project.links.paper} target="_blank" rel="noreferrer">
+                Paper ↗
               </a>
             )}
             {project.links.github && (
