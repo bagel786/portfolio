@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import Panel from '../Panel/Panel'
 import StatLine from '../StatLine/StatLine'
 import type { PanelVariant } from '../Panel/Panel'
@@ -7,6 +9,22 @@ import styles from './ProjectPanel.module.css'
 const variants: PanelVariant[] = ['cut-tl', 'cut-br', 'cut-tr', 'cut-bl']
 
 export default function ProjectPanel({ project, index }: { project: Project; index: number }) {
+  const [zoomed, setZoomed] = useState(false)
+
+  // lock page scroll + close on Esc while the lightbox is open
+  useEffect(() => {
+    if (!zoomed) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setZoomed(false)
+    }
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [zoomed])
+
   return (
     <Panel
       variant={variants[index % variants.length]}
@@ -18,13 +36,20 @@ export default function ProjectPanel({ project, index }: { project: Project; ind
       <article className={styles.body}>
         {project.media.type === 'image' && (
           <div className={styles.mediaFrame}>
-            <img
-              src={project.media.src}
-              alt={project.media.alt ?? project.title}
-              loading="lazy"
-              className={styles.media}
-              style={project.media.ratio ? { aspectRatio: project.media.ratio } : undefined}
-            />
+            <button
+              type="button"
+              className={styles.mediaButton}
+              onClick={() => setZoomed(true)}
+              aria-label={`Enlarge ${project.title} image`}
+            >
+              <img
+                src={project.media.src}
+                alt={project.media.alt ?? project.title}
+                loading="lazy"
+                className={styles.media}
+                style={project.media.ratio ? { aspectRatio: project.media.ratio } : undefined}
+              />
+            </button>
           </div>
         )}
         <p className={styles.role}>{project.role}</p>
@@ -63,6 +88,22 @@ export default function ProjectPanel({ project, index }: { project: Project; ind
           </div>
         )}
       </article>
+      {zoomed &&
+        createPortal(
+          <div
+            className={styles.lightbox}
+            role="dialog"
+            aria-label={`${project.title} image enlarged`}
+            onClick={() => setZoomed(false)}
+          >
+            <img
+              src={project.media.src}
+              alt={project.media.alt ?? project.title}
+              className={styles.lightboxImg}
+            />
+          </div>,
+          document.body,
+        )}
     </Panel>
   )
 }

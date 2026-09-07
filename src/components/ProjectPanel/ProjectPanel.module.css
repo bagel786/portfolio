@@ -19,12 +19,54 @@
   position: relative;
 }
 
+.mediaButton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
 .media {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   filter: saturate(0.9) contrast(1.05);
   transition: transform var(--t-med) ease, filter var(--t-med) ease;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 3000; /* above NeonCursor's 2000 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(9, 7, 15, 0.92);
+  backdrop-filter: blur(6px);
+  cursor: zoom-out;
+  animation: lightboxIn var(--t-med) ease both;
+}
+
+.lightboxImg {
+  max-width: min(1100px, 100%);
+  max-height: 90vh;
+  filter: drop-shadow(0 0 40px rgba(0, 245, 212, 0.2));
+  animation: lightboxImgIn var(--t-med) ease both;
+}
+
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes lightboxImgIn {
+  from {
+    transform: scale(0.94);
+  }
 }
 
 .card:hover .media {
